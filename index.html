@@ -18,6 +18,9 @@
 	<meta name="description" content="Conference Landing Page">
 	<meta name="keywords" content="">
 	<meta name="author" content="Dmitry Volkov">
+
+	<!-- kittu added -->
+	 <link rel="stylesheet" href="Googlr Sheet.css">
 	<title>Rency – Conference Landing Page</title>
 </head>
 
@@ -1222,7 +1225,7 @@
 
 				<!-- form -->
 				<div class="col-12 col-lg-6 offset-lg-1">
-					<form class="form" action="#">
+					<form method="POST" action="" name="contactform" class="form" action="" id="contactform" >
 						<div id="form__parallax" class="form__wrap">
 							<div class="form__bg" data-depth="0.4"></div>
 						</div>
@@ -1236,36 +1239,36 @@
 								<div class="col-12 col-md-6">
 									<div class="form__group">
 										<label for="name" class="form__label">Name</label>
-										<input id="name" type="text" name="name" class="form__input" placeholder="Full name">
+										<input id="name" type="text" name="Name" class="form__input" placeholder="Full name">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form__group">
 										<label for="mail" class="form__label">Email</label>
-										<input id="mail" type="text" name="mail" class="form__input" placeholder="example@domain.com">
+										<input id="mail" type="text" name="Email" class="form__input" placeholder="example@domain.com">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form__group">
 										<label for="phone" class="form__label">Phone</label>
-										<input id="phone" type="text" name="phone" class="form__input" placeholder="800 543 - 2109">
+										<input id="phone" type="text" name="Phone" class="form__input" placeholder="800 543 - 2109">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form__group">
-										<label for="subject" class="form__label">Subject</label>
-										<input id="subject" type="text" name="subject" class="form__input" placeholder="Ex. Support">
+										<label for="subject" class="form__label" name="Subject">Subject</label>
+										<input id="subject" type="text" name="Subject" class="form__input" placeholder="Ex. Support">
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form__group">
-										<label for="message" class="form__label">Message</label>
-										<textarea id="message" name="message" class="form__textarea" placeholder="Please enter your message..."></textarea>
+										<label for="message" class="form__label" name="Message">Message</label>
+										<textarea id="message" class="form__textarea" name="Message" placeholder="Please enter your message..."></textarea>
 									</div>
 								</div>
 
 								<div class="col-12">
-									<button type="button" class="form__btn">
+									<button type="submit" class="form__btn">
 										<span>SUBMIT</span>
 									</button>
 								</div>
@@ -1458,6 +1461,57 @@
 		<button class="close" aria-controls="blueimp-gallery" aria-label="close" aria-keyshortcuts="Escape" type="button"></button>
 	</div>
 
+
+	<!-- <script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbx2r6-8n0haN2opc3L37S2wmZlUbI5xch4zXujS4M7iYr4pp3C--k2Co998-1AtVm9l/exec'
+		const form = document.forms['contactform']
+	  
+		form.addEventListener('submit', e => {
+		  e.preventDefault()
+		  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			.then(response => alert("Thank you! your form is submitted successfully." ))
+			.then(() => {  window.location.reload(); })
+			.catch(error => console.error('Error!', error.message))
+		})
+	  </script> -->
+	  <!-- <script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbx2r6-8n0haN2opc3L37S2wmZlUbI5xch4zXujS4M7iYr4pp3C--k2Co998-1AtVm9l/exec'
+		const form = document.forms['contactform']
+		
+		form.addEventListener('submit', async (e) => {
+		  e.preventDefault()
+		  
+		  try {
+			// Submit the form data in the background
+			await fetch(scriptURL, { method: 'POST', body: new FormData(form) });
+		  } catch (error) {
+			console.error('Error!', error.message);
+		  }
+	  
+		  // Reload the page immediately after submission
+		  window.location.reload(); 
+		});
+	  </script> -->
+	  
+	  <script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbx2r6-8n0haN2opc3L37S2wmZlUbI5xch4zXujS4M7iYr4pp3C--k2Co998-1AtVm9l/exec';
+		const form = document.forms['contactform'];
+	  
+		form.addEventListener('submit', e => {
+		  e.preventDefault(); // Prevent default form submission
+	  
+		  // Send the form data in the background
+		  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+			.catch(error => console.error('Error!', error.message)); // Handle errors
+	  
+		  // Use setTimeout to reload the page after a short delay
+		  setTimeout(() => {
+			window.location.reload(); // Reload the page
+		  }, 100); // Adjust the time if necessary (100 milliseconds is usually enough)
+		});
+	  </script>
+	  
+	  
 	<!-- JS -->
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
