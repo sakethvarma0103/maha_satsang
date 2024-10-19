@@ -986,9 +986,20 @@ ul {
     margin-right: 0;
   }
 }
+@media (max-width: 768px){
+  .hero {
+    padding: 70px 0;
+    background: url("../img/hero/4.1\ -\ Copy.png") no-repeat center/cover;
+  }
+  /* .hero__info
+  {
+    flex-direction: column;
+  } */
+}
 @media (min-width: 768px) {
   .hero {
     padding: 70px 0;
+    background: url("../img/hero/4.1\ -\ Copy.png") no-repeat center/cover;
   }
   .hero__content {
     height: auto;
