@@ -358,56 +358,50 @@
 
 				<!-- form -->
 				<div class="col-12 col-lg-6 offset-lg-1">
-					<form class="form" action="#">
+					<form method="POST" action="" name="contactform" class="form" id="contactform">
 						<div id="form__parallax" class="form__wrap">
-							<div class="form__bg" data-depth="0.4"></div>
+						  <div class="form__bg" data-depth="0.4"></div>
 						</div>
-						
 						<div class="form__content">
-							<div class="row">
-								<div class="col-12">
-									<h4 class="form__title">Write To Us</h4>
-								</div>
-
-								<div class="col-12 col-md-12">
-									<div class="form__group">
-										<label for="name" class="form__label">Name</label>
-										<input id="name" type="text" name="name" class="form__input" placeholder="Full name">
-									</div>
-								</div>
-								<div class="col-12 col-md-6">
-									<div class="form__group">
-										<label for="mail" class="form__label">Email</label>
-										<input id="mail" type="text" name="mail" class="form__input" placeholder="example@gmail.com">
-									</div>
-								</div>
-								<div class="col-12 col-md-6">
-									<div class="form__group">
-										<label for="phone" class="form__label">Phone</label>
-										<input id="phone" type="text" name="phone" class="form__input" placeholder="123-456-7890">
-									</div>
-								</div>
-								<!-- <div class="col-12 col-md-6">
-									<div class="form__group">
-										<label for="subject" class="form__label">Subject</label>
-										<input id="subject" type="text" name="subject" class="form__input" placeholder="Ex. Support">
-									</div>
-								</div> -->
-								<div class="col-12">
-									<div class="form__group">
-										<label for="message" class="form__label">Message</label>
-										<textarea id="message" name="message" class="form__textarea" placeholder="Please enter your message..."></textarea>
-									</div>
-								</div>
-
-								<div class="col-12">
-									<button type="button" class="form__btn">
-										<span>SUBMIT</span>
-									</button>
-								</div>
+						  <div class="row">
+							<div class="col-12">
+							  <h4 class="form__title">Write To Us</h4>
 							</div>
+					  
+							<div class="col-12 col-md-12">
+							  <div class="form__group">
+								<label for="name" class="form__label">Name</label>
+								<input id="name" type="text" name="Name" class="form__input" placeholder="Full name" required>
+							  </div>
+							</div>
+							<div class="col-12 col-md-6">
+							  <div class="form__group">
+								<label for="mail" class="form__label">Email</label>
+								<input id="mail" type="email" name="Email" class="form__input" placeholder="example@domain.com" required>
+							  </div>
+							</div>
+							<div class="col-12 col-md-6">
+							  <div class="form__group">
+								<label for="phone" class="form__label">Phone</label>
+								<input id="phone" type="number" name="Phone" class="form__input" placeholder="800 543 - 2109" required>
+							  </div>
+							</div>
+]
+							<div class="col-12">
+							  <div class="form__group">
+								<label for="message" class="form__label">Message</label>
+								<textarea id="message" class="form__textarea" name="Message" placeholder="Please enter your message..."></textarea>
+							  </div>
+							</div>
+					  
+							<div class="col-12">
+							  <button type="submit" class="form__btn">
+								<span>SUBMIT</span>
+							  </button>
+							</div>
+						  </div>
 						</div>
-					</form>
+					  </form>
 				</div>
 				<!-- end form -->
 			</div>
@@ -492,6 +486,55 @@
 		<button class="close" aria-controls="blueimp-gallery" aria-label="close" aria-keyshortcuts="Escape" type="button"></button>
 	</div>
 
+
+	<script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbzdPBXGmmchN5_vsKpy6Hue1xzNs8kmJvwSwf8xmxnMl3g8TxmT2zCSM7RKr7EJbZEt/exec';
+		const form = document.forms['contactform'];
+	  
+		form.addEventListener('submit', e => {
+		  e.preventDefault(); // Prevent default form submission behavior
+	  
+		  // Create a new FormData object from the form
+		  const formData = new FormData(form);
+	  
+		  // Send the form data to Google Sheets via the fetch API
+		  fetch(scriptURL, { method: 'POST', body: formData })
+			.then(response => {
+			  console.log('Form submitted successfully.');
+			  // Once submission is complete, reload the page
+			  window.location.reload(); 
+			})
+			.catch(error => {
+			  console.error('Error!', error.message);
+			  // If there's an error, optionally alert the user
+			  alert('Failed to submit form. Please try again.');
+			});
+		});
+	  </script>
+	  
+	  
+	  
+	 
+	  
+	  <!-- <script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbx2r6-8n0haN2opc3L37S2wmZlUbI5xch4zXujS4M7iYr4pp3C--k2Co998-1AtVm9l/exec';
+		const form = document.forms['contactform'];
+	  
+		form.addEventListener('submit', e => {
+		  e.preventDefault(); 
+	  
+		  
+		  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+			.catch(error => console.error('Error!', error.message)); // Handle errors
+	  
+		  
+		  setTimeout(() => {
+			window.location.reload(); // Reload the page
+		  }, 100); 
+		});
+	  </script> -->
+	  
+	  
 	<!-- JS -->
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
