@@ -608,7 +608,7 @@ ul {
   position: relative;
   width: 100%;
   padding: 140px 0 60px;
-  background: url("../img/hero/hero.jpg") no-repeat center/cover;
+  background: url("../img/hero/4.1.png") no-repeat center/cover;
 }
 .hero__content {
   display: flex;
@@ -637,7 +637,7 @@ ul {
   line-height: 26px;
   color: #fff;
   padding-left: 30px;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 35px;
   position: relative;
 }
@@ -671,14 +671,13 @@ ul {
   align-items: center;
   border-radius: 16px;
   padding: 20px;
-  background: linear-gradient(230deg, rgba(255,255,255,0.08) 0%, rgba(248,248,248,0) 100%);
   border: 1px solid rgba(255,255,255,0.06);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   margin-right: 26px;
 }
 .hero__when p {
-  font-size: 32px;
+  font-size: 28px;
   line-height: 32px;
   font-weight: 700;
   color: #fff;
@@ -735,7 +734,7 @@ ul {
 .hero__btns {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   width: 100%;
 }
@@ -987,9 +986,48 @@ ul {
     margin-right: 0;
   }
 }
+.hero__title_tag
+{
+  font-size: 200%;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+@media (max-width: 768px){
+  .hero {
+    padding: 70px 0;
+    background: url("../img/hero/4.1\ -\ Copy.png") no-repeat center/cover;
+  }
+  .hero__info
+  {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero__when
+  {
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  .hero__title
+  {
+    font-size: 44px;
+    margin-bottom: 0px;
+  }
+  .hero__tagline
+  {
+    font-weight: 800;
+  }
+  .hero__title_tag
+  {
+    font-size: 140%;
+  }
+}
+
 @media (min-width: 768px) {
   .hero {
     padding: 70px 0;
+    background: url("../img/hero/4.1\ -\ Copy.png") no-repeat center/cover;
   }
   .hero__content {
     height: auto;
@@ -1006,7 +1044,7 @@ ul {
   .hero__title {
     font-size: 56px;
     line-height: 72px;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
   }
   .hero__title:last-child {
     margin-bottom: 0;
@@ -1398,7 +1436,7 @@ ul {
   .section__title--between {
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
   }
   .section__title--between h2 {
     text-align: left;
@@ -3435,6 +3473,7 @@ ul {
   width: 40px;
   height: 40px;
   border-radius: 12px;
+  min-width: 40px;
   background: linear-gradient(65deg, #423baa 0%, #2568b0 100%);
   position: relative;
   overflow: hidden;
