@@ -994,6 +994,11 @@ ul {
   text-transform: uppercase;
   margin-bottom: 5px;
 }
+.location
+{
+  font-weight: 700; 
+  font-size: 23px;
+}
 @media (max-width: 768px){
   .hero {
     padding: 70px 0;
@@ -1022,6 +1027,11 @@ ul {
   {
     font-size: 140%;
   }
+  .location
+{
+  font-weight: 800; 
+  font-size: 20px;
+}
 }
 
 @media (min-width: 768px) {
