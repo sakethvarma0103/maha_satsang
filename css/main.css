@@ -1390,6 +1390,7 @@ ul {
   }
   .section__title p {
     margin-top: 10px;
+    width: 180%;;
   }
   .section__title--border {
     padding-top: 24px;
