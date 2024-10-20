@@ -1002,7 +1002,7 @@ ul {
 @media (max-width: 768px){
   .hero {
     padding: 70px 0;
-    background: url("../img/hero/4.1_w.webp") no-repeat center/cover;
+    background: url("../img/hero/4.1\ -\ Copy.png") no-repeat center/cover;
   }
   .hero__info
   {
