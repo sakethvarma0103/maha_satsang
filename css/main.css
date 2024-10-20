@@ -1008,6 +1008,7 @@ ul {
   {
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 15%;
   }
   .hero__when
   {
@@ -1022,6 +1023,7 @@ ul {
   .hero__tagline
   {
     font-weight: 800;
+    width: 60%;
   }
   .hero__title_tag
   {
@@ -1031,6 +1033,9 @@ ul {
 {
   font-weight: 800; 
   font-size: 20px;
+}
+.hero__content {
+  margin-top: 10%;
 }
 }
 
